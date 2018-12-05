@@ -1,5 +1,5 @@
 {
-    "name": "MailboxValidator/mailboxvalidator-yii",
+    "name": "mailboxvalidator/mailboxvalidator-yii",
     "type": "yii2-extension",
     "description": "MailboxValidator Yii framework extension to validate an email by using MailboxValidator API.",
     "keywords": ["yii2", "MailboxValidator", "Email Validation", "email validator", ""],
