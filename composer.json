@@ -1,0 +1,26 @@
+{
+    "name": "MailboxValidator/mailboxvalidator-yii",
+    "type": "yii2-extension",
+    "description": "MailboxValidator Yii framework extension to validate an email by using MailboxValidator API.",
+    "keywords": ["yii2", "MailboxValidator", "Email Validation", "email validator", ""],
+    "license": "MIT",
+    "version": "1.0.0",
+    "support": {
+        "website": "https://www.mailboxvalidator.com",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "authors": [
+        {
+            "name": "MailboxValidator",
+            "email": "support@mailboxvalidator.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+    },
+    "autoload": {
+        "psr-4": {
+            "MailboxValidator\\": "src/"
+        }
+    }
+}
