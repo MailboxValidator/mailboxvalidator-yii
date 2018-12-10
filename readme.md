@@ -24,7 +24,7 @@ After you get your API key, open your ``config/params.php`` and add the followin
 'mbvAPIKey' => 'PASTE_YOUR_API_KEY_HERE',
 ```
 
-You can also set you api key in controller after calling library. Just do like this:
+You can also set you API key in controller after calling library. Just do like this:
 
 ```php
 $mbv = new SingleValidation('PASTE_YOUR_API_KEY_HERE');
