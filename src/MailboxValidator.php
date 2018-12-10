@@ -58,7 +58,7 @@ class MailboxValidator extends Validator{
 		} else {
 			$this->mbv = new SingleValidation(Yii::$app->params['mbvAPIKey']);
 		}
-		$result = $this->mbv->DisposableEmail($email);
+		$result = $this->mbv->disposableEmail($email);
 		if ($result != false && $result->error_code == '') {
 			if ($result->is_disposable == 'True') {
 				file_put_contents( '../mbv_log.log', date('d M, Y h:i:s A') . PHP_EOL, FILE_APPEND);
@@ -82,7 +82,7 @@ class MailboxValidator extends Validator{
 		} else {
 			$this->mbv = new SingleValidation(Yii::$app->params['mbvAPIKey']);
 		}
-		$result = $this->mbv->FreeEmail($email);
+		$result = $this->mbv->freeEmail($email);
 		if ($result != false && $result->error_code == '') {
 			if ($result->is_free == 'True') {
 				file_put_contents( '../mbv_log.log', date('d M, Y h:i:s A') . PHP_EOL, FILE_APPEND);
