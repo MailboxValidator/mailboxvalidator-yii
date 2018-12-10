@@ -44,7 +44,7 @@ Below are the methods supported in this library.
 
 | Method Name        | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |
-| ValidateEmail      | Return the validation result of an email address. Please visit [MailboxValidator](https://www.mailboxvalidator.com/api-single-validation) for the list of the response parameters. |
+| validateEmail      | Return the validation result of an email address. Please visit [MailboxValidator](https://www.mailboxvalidator.com/api-single-validation) for the list of the response parameters. |
 | validateFree       | Check whether the email address is belongs to a free email provider or not. Return Values: True, False |
 | validateDisposable | Check whether the email address is belongs to a disposable email provider or not. Return Values: True, False |
 
