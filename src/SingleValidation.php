@@ -15,7 +15,7 @@ class SingleValidation {
 	
 	}
 	
-	public function ValidateEmail($email) {
+	public function validateEmail($email) {
 		try{
 			$params = [ 'email' => $email, 'key' => $this->apikey, 'format' => 'json' ];
 			$params2 = [];
@@ -38,7 +38,7 @@ class SingleValidation {
 		}
 	}
 	
-	public function DisposableEmail($email) {
+	public function disposableEmail($email) {
 		try{
 			$params = [ 'email' => $email, 'key' => $this->apikey, 'format' => 'json' ];
 			$params2 = [];
@@ -61,7 +61,7 @@ class SingleValidation {
 		}
 	}
 	
-	public function FreeEmail($email) {
+	public function freeEmail($email) {
 		try{
 			$params = [ 'email' => $email, 'key' => $this->apikey, 'format' => 'json' ];
 			$params2 = [];
