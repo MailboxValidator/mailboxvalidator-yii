@@ -4,7 +4,7 @@ namespace MailboxValidator;
 
 use Yii;
 use yii\validators\Validator;
-use MailboxValidator\SingleValidation;
+use MailboxValidator\EmailValidation;
 
 class MailboxValidator extends Validator{
 	
@@ -54,11 +54,11 @@ class MailboxValidator extends Validator{
 	}
 	public function validateDisposable($email,$key = '') {
 		if ($key != '') {
-			$this->mbv = new SingleValidation($key);
+			$this->mbv = new EmailValidation($key);
 		} else {
-			$this->mbv = new SingleValidation(Yii::$app->params['mbvAPIKey']);
+			$this->mbv = new EmailValidation(Yii::$app->params['mbvAPIKey']);
 		}
-		$result = $this->mbv->disposableEmail($email);
+		$result = $this->mbv->isDisposableEmail($email);
 		if ($result != false && $result->error_code == '') {
 			if ($result->is_disposable == 'True') {
 				file_put_contents( '../mbv_log.log', date('d M, Y h:i:s A') . PHP_EOL, FILE_APPEND);
@@ -78,11 +78,11 @@ class MailboxValidator extends Validator{
 	}
 	public function validateFree($email,$key = '') {
 		if ($key != '') {
-			$this->mbv = new SingleValidation($key);
+			$this->mbv = new EmailValidation($key);
 		} else {
-			$this->mbv = new SingleValidation(Yii::$app->params['mbvAPIKey']);
+			$this->mbv = new EmailValidation(Yii::$app->params['mbvAPIKey']);
 		}
-		$result = $this->mbv->freeEmail($email);
+		$result = $this->mbv->isFreeEmail($email);
 		if ($result != false && $result->error_code == '') {
 			if ($result->is_free == 'True') {
 				file_put_contents( '../mbv_log.log', date('d M, Y h:i:s A') . PHP_EOL, FILE_APPEND);
