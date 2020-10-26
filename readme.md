@@ -34,7 +34,7 @@ After you get your API key, open your ``config/params.php`` and add the followin
 You can also set you API key in controller after calling library. Just do like this:
 
 ```php
-$mbv = new SingleValidation('PASTE_YOUR_API_KEY_HERE');
+$mbv = new EmailValidation('PASTE_YOUR_API_KEY_HERE');
 ```
 
 or like this:
@@ -46,7 +46,7 @@ or like this:
 
 ## Functions
 
-### SingleValidation (api_key)
+### EmailValidation (api_key)
 
 Creates a new instance of the MailboxValidator object with the API key.
 
@@ -58,7 +58,7 @@ Check whether the email address is belongs to a disposable email provider or not
 
 Check whether the email address is belongs to a free email provider or not. Return Values: True, False
 
-### ValidateEmail (email_address)
+### validateEmail (email_address)
 
 Performs email validation on the supplied email address.
 
@@ -87,7 +87,7 @@ Performs email validation on the supplied email address.
 | error_code | The error code if there is any error. See error table in the below section. |
 | error_message | The error message if there is any error. See error table in the below section. |
 
-### DisposableEmail (email_address)
+### isDisposableEmail (email_address)
 
 Check if the supplied email address is from a disposable email provider.
 
@@ -101,7 +101,7 @@ Check if the supplied email address is from a disposable email provider.
 | error_code | The error code if there is any error. See error table in the below section. |
 | error_message | The error message if there is any error. See error table in the below section. |
 
-### FreeEmail (email_address)
+### isFreeEmail (email_address)
 
 Check if the supplied email address is from a free email provider.
 
@@ -138,14 +138,14 @@ In this line, the extension is been called, and you will need to specify which v
 To use this library to get validation result for an email address, firstly load the library in your controller like this:
 
 ```php
-use MailboxValidator\SingleValidation;
+use MailboxValidator\EmailValidation;
 ```
 
 After that, you can get the validation result for the email address like this:
 
 ```php
-$mbv = new SingleValidation(Yii::$app->params['mbvAPIKey']);
-$results = $mbv->FreeEmail('example@example.com');
+$mbv = new EmailValidation(Yii::$app->params['mbvAPIKey']);
+$results = $mbv->isFreeEmail('example@example.com');
 ```
 
 To pass the result to the view, just simply add the $results to your view loader like this:
