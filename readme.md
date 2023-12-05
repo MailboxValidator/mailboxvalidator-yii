@@ -179,4 +179,4 @@ You can refer the full list of response parameters available at above.
 
 ## Copyright
 
-Copyright (C) 2018-2020 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2018-2023 by MailboxValidator.com, support@mailboxvalidator.com
