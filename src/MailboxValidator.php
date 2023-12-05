@@ -1,7 +1,6 @@
 <?php
 namespace MailboxValidator;
 
-
 use Yii;
 use yii\validators\Validator;
 use MailboxValidator\EmailValidation;
@@ -59,8 +58,8 @@ class MailboxValidator extends Validator{
 			$this->mbv = new EmailValidation(Yii::$app->params['mbvAPIKey']);
 		}
 		$result = $this->mbv->isDisposableEmail($email);
-		if ($result != false && $result->error_code == '') {
-			if ($result->is_disposable == 'True') {
+		if ($result != false && !isset($result->error)) {
+			if ($result->is_disposable) {
 				file_put_contents( '../mbv_log.log', date('d M, Y h:i:s A') . PHP_EOL, FILE_APPEND);
 				file_put_contents( '../mbv_log.log', json_encode($result) . PHP_EOL, FILE_APPEND);
 				return false;
@@ -83,8 +82,8 @@ class MailboxValidator extends Validator{
 			$this->mbv = new EmailValidation(Yii::$app->params['mbvAPIKey']);
 		}
 		$result = $this->mbv->isFreeEmail($email);
-		if ($result != false && $result->error_code == '') {
-			if ($result->is_free == 'True') {
+		if ($result != false && !isset($result->error)) {
+			if ($result->is_free) {
 				file_put_contents( '../mbv_log.log', date('d M, Y h:i:s A') . PHP_EOL, FILE_APPEND);
 				file_put_contents( '../mbv_log.log', json_encode($result) . PHP_EOL, FILE_APPEND);
 				return false;
